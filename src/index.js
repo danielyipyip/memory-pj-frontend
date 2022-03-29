@@ -7,7 +7,7 @@ import store from './components/redux/store'
 // background style from https://www.svgbackgrounds.com/
 import './index.css'
 
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
 
 const theme = createTheme(
     {flexDirection: 'column-reverse'}

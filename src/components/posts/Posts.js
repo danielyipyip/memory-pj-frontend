@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Post from './post/Post'
 import useStyles from './styles'
 import { Grid, CircularProgress } from '@mui/material'
 
-import {useSelector, useDispatch} from 'react-redux'
-import { getPost } from "../redux/posts/postAction";
+import {useSelector} from 'react-redux'
 
 function Posts() {
     const classes = useStyles();
