@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {AppBar, Container, Grow, Typography, Grid} from '@mui/material';
 import Posts from "./components/posts/Posts.js"
 import Form from "./components/form/Form.js"
@@ -18,7 +18,7 @@ const App = () =>{
     const id = useSelector(state => state.id.id)
     useEffect( ()=>{
         dispatch(getPost());
-    }, [posts, id])
+    }, [dispatch, posts, id])
 
     return (
         <div>

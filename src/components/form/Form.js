@@ -1,10 +1,10 @@
-import React, {useState, useEffect, useCallback} from 'react'
+import React, {useState, useEffect} from 'react'
 import {TextField, Button, Typography, Paper} from '@mui/material'
 import useStyles from "./styles"
 import FileBase from 'react-file-base64'
 import {useSelector, useDispatch} from 'react-redux'
 import {postPost} from '../redux/posts/postAction'
-import { getOnePost, updateId, UpdatePost } from '../redux'
+import { getOnePost, UpdatePost } from '../redux'
 
 function Form() {
   const classes = useStyles();
@@ -25,7 +25,7 @@ function Form() {
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();
-    if (id!=0){
+    if (id!==0){
       dispatch(UpdatePost(id, postData))
       // dispatch(updateId(0))
     }else{
@@ -36,8 +36,8 @@ function Form() {
   }
 
   useEffect(()=>{
-    if (id!=0){dispatch(getOnePost(id))}
-  }, [id])
+    if (id!==0){dispatch(getOnePost(id))}
+  }, [dispatch, id])
 
   useEffect(()=>{
     setPostData(post)
