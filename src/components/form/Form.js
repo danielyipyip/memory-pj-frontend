@@ -43,7 +43,7 @@ function Form() {
     setPostData(post)
   }, [post])
 
-  const clear = () => {setPostData(initialPostData);}
+  const clear = () => {setPostData(initialPostData); document.getElementById("myFile").value = "";}
 
   return (
     <Paper className={classes.paper}>
@@ -55,7 +55,7 @@ function Form() {
         <TextField variant='outlined' value={postData.tags} onChange={
           evt => setPostData(prev => {return {...prev, tags: evt.target.value.split(',')}})} name="tag" label="Tag" fullWidth />
         <div className={classes.fileInput}>
-          <FileBase type='file' multiple={false} onDone={
+          <FileBase id='myFile' type='file' multiple={false} onDone={
             ({base64}) => setPostData(prev => {return {...prev, selectedFile: base64}})}></FileBase>
         </div>
         <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
